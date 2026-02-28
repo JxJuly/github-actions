@@ -11,3 +11,5 @@ jobs:
     steps:
       - name: Setup Environment
         uses: JxJuly/github-actions/setup-environment@main
+        with:
+          pnpm_version: '10'

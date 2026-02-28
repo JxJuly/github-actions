@@ -7,6 +7,10 @@ branding:
   color: orange
 
 inputs:
+  pnpm_version:
+    description: pnpm version to use
+    required: false
+
   run_install:
     description: Run pnpm install
     required: false
@@ -35,5 +39,6 @@ runs:
     - name: Setup Pnpm
       uses: pnpm/action-setup@v4
       with:
+        version: ${{ inputs.pnpm_version }}
         run_install: ${{ inputs.run_install }}
 
