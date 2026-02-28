@@ -1,0 +1,13 @@
+name: Test Setup Environment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Environment
+        uses: ./setup-environment
