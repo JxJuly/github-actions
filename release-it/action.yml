@@ -7,7 +7,7 @@ branding:
   color: green
 
 inputs:
-  version-bump:
+  version_bump:
     description: Version bump strategy (e.g., patch, minor, major)
     required: false
 
@@ -25,8 +25,7 @@ runs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_CONFIG_PROVENANCE: true
       run: |
-        echo "version-bump: ${{ inputs.version-bump }}"
         release-it \
           --config ${{ github.action_path }}/release-it.json \
-          ${{ inputs.version-bump }}
+          ${{ inputs.version_bump }}
 

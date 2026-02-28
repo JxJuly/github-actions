@@ -6,6 +6,11 @@ branding:
   icon: package
   color: orange
 
+inputs:
+  run_install:
+    description: Run pnpm install
+    required: false
+
 runs:
   using: composite
   steps:
@@ -27,4 +32,6 @@ runs:
 
     - name: Setup Pnpm
       uses: pnpm/action-setup@v4
+      with:
+        run_install: ${{ inputs.run_install }}
 
