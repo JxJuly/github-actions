@@ -1,0 +1,32 @@
+name: Release with release-it
+description: Run release-it for automated versioning and package publishing
+author: July
+
+branding:
+  icon: tag
+  color: green
+
+inputs:
+  version-bump:
+    description: Version bump strategy (e.g., patch, minor, major)
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - name: Install Release-it
+      run: |
+        echo "pnpm version: ${{ pnpm -v }}"
+        pnpm add -g release-it @release-it/conventional-changelog
+        echo "release-it version: ${{ release-it -v }}"
+
+    - name: Run release-it
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_CONFIG_PROVENANCE: true
+      run: |
+        echo "version-bump: ${{ inputs.version-bump }}"
+        release-it \
+          --config ${{ github.action_path }}/release-it.json \
+          ${{ inputs.version-bump }}
+
