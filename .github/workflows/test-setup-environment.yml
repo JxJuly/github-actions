@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Environment
-        uses: ./setup-environment
+        uses: JxJuly/github-actions/setup-environment@main
