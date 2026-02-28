@@ -15,12 +15,14 @@ runs:
   using: composite
   steps:
     - name: Install Release-it
+      shell: bash
       run: |
         echo "pnpm version: ${{ pnpm -v }}"
         pnpm add -g release-it @release-it/conventional-changelog
         echo "release-it version: ${{ release-it -v }}"
 
     - name: Run release-it
+      shell: bash
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_CONFIG_PROVENANCE: true
