@@ -10,6 +10,7 @@ inputs:
   run_install:
     description: Run pnpm install
     required: false
+    default: 'false'
 
 runs:
   using: composite
