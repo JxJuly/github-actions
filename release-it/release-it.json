@@ -17,10 +17,14 @@
       "preset": {
         "name": "conventionalcommits",
         "types": [
-          { "type": "feat", "section": "🌟 Features | 新功能"},
-          { "type": "fix", "section": "🐛 Bug Fixes | Bug 修复"},
-          { "type": "ci", "section": "🚀 Tool | 工具升级"},
-          { "type": "chore", "section": "🔧 Chore | 日常维护"}
+          { "type": "feat", "section": "🌟 Features | 新功能" },
+          { "type": "fix", "section": "🐛 Bug Fixes | Bug 修复" },
+          { "type": "refactor", "section": "🔄 Refactor | 重构代码" },
+          { "type": "style", "section": "🎨 Style | 代码格式调整" },
+          { "type": "docs", "section": "📖 Docs | 文档更新" },
+          { "type": "test", "section": "✅ Test | 测试相关" },
+          { "type": "chore", "section": "🔧 Chore | 日常维护" },
+          { "type": "perf", "section": "⚡ Performance | 性能优化" }
         ]
       }
     }
