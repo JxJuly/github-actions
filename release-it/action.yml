@@ -10,6 +10,9 @@ inputs:
   version_bump:
     description: Version bump strategy (e.g., patch, minor, major)
     required: false
+  github_token:
+    description: GitHub token for release-it
+    required: true
 
 runs:
   using: composite
@@ -24,7 +27,7 @@ runs:
     - name: Run release-it
       shell: bash
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ inputs.github_token }}
         NPM_CONFIG_PROVENANCE: true
       run: |
         release-it \
